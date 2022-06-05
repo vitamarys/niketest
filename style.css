@@ -1,0 +1,177 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul,
+ol {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  overflow-x: hidden;
+  font-family: 'Barlow Condensed', sans-serif;
+  background: white;
+}
+
+.baners{
+    width: 300px;
+    height: 600px;
+    background: linear-gradient(180deg, #FFFFFF 0%, #9EA3AB 75%, #E3E3E3 100%);
+    border: 1px solid #A5A9B0;
+    
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    /* justify-content: center; */
+   
+}
+.baner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px;
+    padding:30px 40px 40px 39px;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    cursor: pointer;
+}
+.logo-wrap{
+    margin-bottom: 75px;
+}
+.slide{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.title-wrap{
+    margin-bottom: 20px;
+}
+.title{
+font-weight: 700;
+font-size: 32px;
+line-height: 120%;
+color: #111111;
+text-align: center;
+}
+.price-wrap{
+    display: flex;
+    justify-content: center;
+}
+.price{
+    padding: 5px 20px;
+    font-weight: 700;
+font-size: 24px;
+color: #FFFFFF;
+background: #FF0000;
+border-radius: 3px;
+}
+.img-wrap{
+    position: relative;
+   
+    width: 100%;
+    max-height: 230px;
+    display: flex;
+    justify-content: center;
+}
+.img{
+    object-fit: contain;
+    object-position: 50% 20px ;
+
+}
+.btn{
+    font-style: italic;
+    font-weight: 700;
+    min-width: 180px;
+    font-size: 23px;
+    color: #FFFFFF;
+    background: #111111;
+    border-radius: 3px;
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+  
+  
+
+.show {
+    animation-duration: 3s ;
+    animation-name:show;
+    
+
+}
+
+.btn::before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background: #FFFFFF;
+    transition: all 2s ease;
+  }
+  .btn.active {
+    color: #111111;
+    border-radius: 0px;
+    z-index: 3;
+  }
+  .btn.active::before {
+    width: 100%;
+    z-index: -1;
+  }
+
+@keyframes show {
+    0%{
+        opacity: 0;
+        z-index: -1;
+    }
+    50%{
+        opacity: 1;
+        z-index: 5;
+    }
+    100%{
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+  
+ 
